@@ -1,0 +1,66 @@
+<link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
+<style>	
+	:root{
+	  /* Customize your brand colors */
+  --chat--color-primary: #4F46E5; /* Your brand color */
+  --chat--color-secondary: #10B981; /* User message color */
+  
+  /* Customize window size */
+  --chat--window--width: 450px;
+  --chat--window--height: 650px;
+  
+  /* Customize header */
+  --chat--header--background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --chat--heading--font-size: 1.5em;
+  
+  /* Customize message bubbles */
+  --chat--message--bot--background: #ffffff;
+  --chat--message--user--background: #4f46e5;
+  --chat--border-radius: 1rem;
+  
+  /* Toggle button */
+  --chat--toggle--size: 70px;
+--chat--toggle--hover--background: #4e46e5d8;
+--chat--toggle--active--background: #4f46e5;
+  
+  /* Input area */
+  --chat--input--background: #f9f9f9;
+  --chat--input--font-size: 1em;
+  
+  /* Font */
+  --chat--font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	}
+</style>
+<script type="module">
+	import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+
+	createChat({
+	webhookUrl: 'https://megharajbigcity.app.n8n.cloud/webhook/94d433a7-4505-42b2-8aec-8dbdc0f204ed/chat',
+	webhookConfig: {
+		method: 'POST',
+		headers: {}
+	},
+	target: '#n8n-chat',
+	mode: 'window',
+	chatInputKey: 'chatInput',
+	chatSessionKey: 'sessionId',
+	loadPreviousSession: true,
+	metadata: {},
+	showWelcomeScreen: false,
+	defaultLanguage: 'en',
+	initialMessages: [
+		'Hi there! 👋',
+		'Im CS Assistent. How can I assist you today?'
+	],
+	i18n: {
+		en: {
+			title: 'Hi there! 👋',
+			subtitle: "Start a chat. We're here to help you 24/7.",
+			footer: '',
+			getStarted: 'New Conversation',
+			inputPlaceholder: 'Type your question..',
+		},
+	},
+	enableStreaming: false,
+});
+</script>
